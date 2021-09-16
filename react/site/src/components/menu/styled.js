@@ -39,7 +39,7 @@ const Container = styled.div`
 
     .black-box {
         background-color: #262626;
-        width: 356px;
+        width: auto;
         height: 61px;
     }
 

@@ -4,7 +4,7 @@ const Container = styled.div`
 
     display: flex;
     flex-direction: row;
-    min-width: 100%;
+    width: 100%;
 
     .new-student-box {
         display: flex;
@@ -261,6 +261,16 @@ const Container = styled.div`
         width: .1em;
     }
 
+    .coluna-acao > button {
+        visibility: hidden;
+    }
+
+    tr:hover {
+        .coluna-acao > button {
+        visibility: visible;
+    }
+    }
+
     button {
         cursor: pointer;
     }
@@ -306,7 +316,7 @@ const Container = styled.div`
 const Conteudo = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
 `
 
 export { Container, Conteudo }
