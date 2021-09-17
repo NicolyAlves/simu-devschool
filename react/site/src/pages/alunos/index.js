@@ -33,9 +33,6 @@ export default function Index() {
         let r  = await api.listar();
         console.log(r);
         setAlunos(r);
-
-        if (validarAluno(r))
-            setAlunos(r);
     }
 
 
@@ -55,13 +52,9 @@ export default function Index() {
         if (r.erro)
         toast.error(r.erro);
         else
-        toast.dark('💓 Aluno inserido!');
+        toast.dark('💓 Aluno alterado!');
 
-         if (chamada <= 0) 
-            return true;
-            resp.send({});
         }
-
 
         limparcampos();
         listar ();
@@ -102,6 +95,8 @@ export default function Index() {
                 }
             ]
         });
+
+    
         loading.current.complete();
     }
 
@@ -118,18 +113,9 @@ export default function Index() {
         loading.current.complete();
     }
 
-    const validarAluno = (resp) => {
-        if(!resp.erro)
-            return true;
-        toast.error(`${resp.erro}`);
-        return false;
-    }
-
-
     useEffect(() => {
         listar();
     }, {})
-
 
 
     return (
